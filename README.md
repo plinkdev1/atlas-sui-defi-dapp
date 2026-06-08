@@ -80,3 +80,13 @@ Required env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPA
 ## Disclaimer
 
 Shared as a portfolio artifact demonstrating product, system, and on-chain design. Experimental software — not audited, not financial advice.
+
+## The Atlas Ecosystem
+
+Part of the Atlas ecosystem on Sui:
+
+| Repository | Role |
+|---|---|
+| [atlas-website](https://github.com/plinkdev1/atlas-website) | Landing site & provider portal |
+| **atlas-app** (this repo) | dApp + Sui Move contracts |
+| [airpoints](https://github.com/plinkdev1/airpoints) | Loyalty & rewards engine — the $ATLAS flywheel |
