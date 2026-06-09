@@ -13,7 +13,7 @@
 
 </div>
 
-> **Related:** ecosystem website -> [atlas-sui-ecosystem-website](https://github.com/plinkdev1/atlas-sui-ecosystem-website)
+> **Related:** ecosystem website -> [sui-defi-ecosystem-website](https://github.com/plinkdev1/sui-defi-ecosystem-website)
 
 ---
 
@@ -60,7 +60,7 @@ Sui wallet ──▶ Move contracts (swap · pools · staking)
 ## Project Structure
 
 ```
-atlas-sui-defi-dapp/
+sui-defi-dapp/
 .vscode/
    settings.json
 app/
