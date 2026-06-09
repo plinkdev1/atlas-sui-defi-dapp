@@ -7,7 +7,6 @@
 [![Sui](https://img.shields.io/badge/Sui-6FBCF0?logo=sui&logoColor=white)](https://sui.io)
 [![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Status](https://img.shields.io/badge/status-MVP-orange)]()
 
 *The on-chain side of Atlas: connect a Sui wallet, swap tokens, and put assets to work.*
@@ -19,8 +18,6 @@
 ## What Is This?
 
 Atlas DeFi is the decentralized application of the Atlas ecosystem on Sui. Users connect a Sui wallet and interact with core DeFi primitives - swaps, liquidity, and staking - through a clean, responsive interface.
-
-> **Connect. Swap. Earn.**
 
 ---
 
@@ -136,14 +133,11 @@ tsconfig.json
 
 ## Screenshots
 
-<p align="center">
-  <img src="screenshots/01.png" width="800" />
-  <img src="screenshots/02.png" width="800" />
-  <img src="screenshots/03.png" width="800" />
-  <img src="screenshots/04.png" width="800" />
-  <img src="screenshots/05.png" width="800" />
-  <img src="screenshots/06.png" width="800" />
-</p>
+<table>
+<tr><td width="50%"><img src="screenshots/01.png" width="100%" /></td><td width="50%"><img src="screenshots/02.png" width="100%" /></td></tr>
+<tr><td width="50%"><img src="screenshots/03.png" width="100%" /></td><td width="50%"><img src="screenshots/04.png" width="100%" /></td></tr>
+<tr><td width="50%"><img src="screenshots/05.png" width="100%" /></td><td width="50%"><img src="screenshots/06.png" width="100%" /></td></tr>
+</table>
 
 ---
 
@@ -156,14 +150,6 @@ npx next dev
 
 ---
 
-## Roadmap
-
-- Live pools and staking on Sui
-- Portfolio analytics
-- Multi-token routing
-
----
-
 ## Notes
 
 Shared as a portfolio artifact demonstrating product and system design. Early prototype, not a finished product; not financial advice.
@@ -173,4 +159,3 @@ Shared as a portfolio artifact demonstrating product and system design. Early pr
 Built on Sui · MIT
 
 </div>
-
