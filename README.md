@@ -1,6 +1,6 @@
-﻿<div align="center">
+<div align="center">
 
-# Atlas DeFi
+# Sui DeFi dApp
 
 **A DeFi dApp on Sui - swap, provide liquidity, and stake**
 
