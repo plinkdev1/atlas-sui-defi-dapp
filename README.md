@@ -1,92 +1,175 @@
-﻿# Atlas Protocol — Sui DeFi Toolkit & On-Chain Protocol
+﻿<div align="center">
 
-![Next.js](https://img.shields.io/badge/Next.js-16-000000) ![React](https://img.shields.io/badge/React-19-61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6) ![Sui](https://img.shields.io/badge/Sui-Move-6FBCF0) ![Supabase](https://img.shields.io/badge/Supabase-Postgres-3ECF8E)
+# Atlas DeFi
 
-> The all-in-one Sui power tool: decode any transaction into plain English, pull live oracle prices, get best-price swaps across DEXs, manage staking, explore the chain, and clean up wallets — backed by an on-chain Move package and a ~100-route API layer.
+**A DeFi dApp on Sui - swap, provide liquidity, and stake**
 
-**Status:** Prototype (v1.0.0 development build). Front end, API layer, and Move package are built out; live actions require keys/RPC.
+[![Sui](https://img.shields.io/badge/Sui-6FBCF0?logo=sui&logoColor=white)](https://sui.io)
+[![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Status](https://img.shields.io/badge/status-MVP-orange)]()
 
-## Screens
+*The on-chain side of Atlas: connect a Sui wallet, swap tokens, and put assets to work.*
 
-<p align="center">
-  <img src="screenshots/01.png" width="240" />
-  <img src="screenshots/03.png" width="240" />
-  <img src="screenshots/06.png" width="240" />
-</p>
+</div>
 
-## Why Atlas
+---
 
-Sui users juggle a half-dozen tools — an explorer here, a swap there, staking somewhere else. Atlas folds discovery and action into one application and adds an AI layer that turns raw transactions into readable explanations.
+## What Is This?
 
-## Feature Matrix
+Atlas DeFi is the decentralized application of the Atlas ecosystem on Sui. Users connect a Sui wallet and interact with core DeFi primitives - swaps, liquidity, and staking - through a clean, responsive interface.
 
-| Capability | What it does | Powered by |
-|---|---|---|
-| AI Transaction Decoder | Plain-English explanation of any Sui tx hash | xAI Grok |
-| Oracle Feeds | Live SUI/BTC/ETH prices with alerts | Pyth Network |
-| Swap Aggregator | Best quote + execution across DEXs | Cetus CLMM, Turbos |
-| Staking Hub | Validators, delegations, reward calculation | Sui RPC |
-| On-Chain Explorer | Transaction / object / address / block search | Sui RPC |
-| Wallet Tools | Holdings analytics + wallet cleanup | Sui RPC |
-| Bridge Hub | Cross-chain route discovery + execution | — |
-| NFT Marketplace | Listings, ownership, trading | — |
-| Provider Directory | Infrastructure listings + admin moderation | Supabase |
-| Monetization | Tiered entitlements, API keys, usage metering | LemonSqueezy |
+> **Connect. Swap. Earn.**
 
-## Engineering Highlights
+---
 
-- **Three authentication paths in one app** — Sui wallet connect, **zkLogin**, and **passkeys (WebAuthn)**, plus email/password.
-- **DEX aggregation** with real quote and execute routes against the Cetus CLMM SDK.
-- **AI decoding pipeline** that summarizes on-chain transactions via Grok.
-- **Usage-metered API platform** — key issuance, per-endpoint quotas, tiered billing.
-- **A real on-chain Move package** (below) — not just a front end calling third-party contracts.
-- **~40 pages and ~100 API routes** spanning auth, DeFi tools, explorer, admin, and billing.
+## Features
 
-## On-Chain (Sui Move)
+| Feature | Description | Status |
+|---|---|:---:|
+| Sui wallet connect | Connect via Sui dApp Kit | ✅ |
+| Token swap | Swap interface with quotes | ✅ |
+| Portfolio view | Balances and positions | 🚧 |
+| Liquidity pools | Provide and manage liquidity | 🚧 |
+| Staking | Stake assets for yield | 🚧 |
 
-A Move package lives in `contracts/`:
-- `sources/atlas_protocol.move` — protocol module
-- `sources/types.move` — shared types
-- `Move.toml` — package manifest
+---
+
+## How It Works
+
+```
+Client (Next.js)
+     │  Sui dApp Kit
+     ▼
+Sui wallet ──▶ Move contracts (swap · pools · staking)
+```
+
+---
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
-| Framework | Next.js 16, React 19, TypeScript |
-| Sui | @mysten/sui, @mysten/dapp-kit, @mysten/zklogin, @mysten/wallet-kit |
-| DeFi / Data | Cetus CLMM SDK, Pyth Network, Sui RPC |
-| AI | xAI Grok |
-| Backend | Next.js API routes, Supabase (Postgres) |
-| Auth | SimpleWebAuthn (passkeys), JWT (jose) |
-| Billing | LemonSqueezy |
-| State / UI | Zustand, TanStack Query, SWR, Tailwind v4, shadcn/ui |
+| Frontend | Next.js, React, TypeScript |
+| Styling | Tailwind CSS, shadcn/ui |
+| Chain | Sui - Move contracts |
+| Wallet | Sui dApp Kit (@mysten/dapp-kit) |
+
+---
+
+## Project Structure
+
+```
+atlas-sui-defi-dapp/
+.vscode/
+   settings.json
+app/
+   about/
+   admin/
+   api/
+   auth/
+   bridge-hub/
+   cetus-test/
+components/
+   homepage/
+   ui/
+   widgets/
+   ad-carousel.tsx
+   ad-management-modal.tsx
+   admin-dashboard-content.tsx
+contracts/
+   sources/
+   deployed_addresses.json
+   Move.toml
+hooks/
+   use-airpoints-earn.ts
+   use-airpoints-sync.tsx
+   use-airpoints.ts
+   use-analytics.ts
+   use-mobile.ts
+   use-pro-status.ts
+lib/
+   supabase/
+   admin-auth.ts
+   admin-check.ts
+   ads-data.ts
+   ai-explain-utils.ts
+   api-key-utils.ts
+public/
+   images/
+   logos/
+   3d-coin-atlas.png
+   atlas-logo.png
+   footer-effect.png
+   icon.svg
+scripts/
+   001_create_wallet_users_schema.sql
+   002_create_user_profiles_table.sql
+   003_create_user_data_table.sql
+   004_create_providers_table.sql
+   005_add_admin_moderation.sql
+   006_create_entitlements_table.sql
+styles/
+   globals.css
+types/
+   advertising.ts
+   chain-id.ts
+utils/
+   api/
+.gitignore
+components.json
+CONTRIBUTING.md
+next.config.mjs
+next-env.d.ts
+package.json
+package-lock.json
+pnpm-lock.yaml
+postcss.config.mjs
+proxy.ts
+README.md
+SECURITY.md
+tsconfig.json
+```
+
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/01.png" width="800" />
+  <img src="screenshots/02.png" width="800" />
+  <img src="screenshots/03.png" width="800" />
+  <img src="screenshots/04.png" width="800" />
+  <img src="screenshots/05.png" width="800" />
+  <img src="screenshots/06.png" width="800" />
+</p>
+
+---
 
 ## Getting Started
 
 ```bash
-npm install --legacy-peer-deps
-cp .env.example .env.local     # add your own keys
-npm run dev                    # http://localhost:3000
+npm install --legacy-peer-deps --ignore-scripts
+npx next dev
 ```
 
-Required env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GROK_API_KEY`, `NEXT_PUBLIC_SUI_RPC_URL`.
+---
 
-## Known Limitations
+## Roadmap
 
-- Prototype: live swap/stake/bridge and AI decoding require real keys and RPC.
-- Pin Next.js to a patched 16.x release.
+- Live pools and staking on Sui
+- Portfolio analytics
+- Multi-token routing
 
-## Disclaimer
+---
 
-Shared as a portfolio artifact demonstrating product, system, and on-chain design. Experimental software — not audited, not financial advice.
+## Notes
 
-## The Atlas Ecosystem
+Shared as a portfolio artifact demonstrating product and system design. Early prototype, not a finished product; not financial advice.
 
-Part of the Atlas ecosystem on Sui:
+<div align="center">
 
-| Repository | Role |
-|---|---|
-| [atlas-website](https://github.com/plinkdev1/atlas-website) | Landing site & provider portal |
-| **atlas-app** (this repo) | dApp + Sui Move contracts |
-| [airpoints](https://github.com/plinkdev1/airpoints) | Loyalty & rewards engine — the $ATLAS flywheel |
+Built on Sui · MIT
+
+</div>
